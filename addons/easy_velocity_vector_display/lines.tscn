@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://addons/easy_velocity_vector_display/new_cubemesh.tres" type="CubeMesh" id=1]
+[ext_resource path="res://addons/easy_velocity_vector_display/3d_line_shader.tres" type="Shader" id=2]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 2 )
+shader_param/arrow_colour = Vector3( 1, 0, 0 )
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 2 )
+shader_param/arrow_colour = Vector3( 0, 1, 0 )
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = ExtResource( 2 )
+shader_param/arrow_colour = Vector3( 0, 0, 1 )
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = ExtResource( 2 )
+shader_param/arrow_colour = Vector3( 1, 0, 1 )
+
+[node name="lines" type="Spatial"]
+
+[node name="x" type="MeshInstance" parent="."]
+mesh = ExtResource( 1 )
+material/0 = SubResource( 1 )
+
+[node name="y" type="MeshInstance" parent="."]
+mesh = ExtResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="z" type="MeshInstance" parent="."]
+mesh = ExtResource( 1 )
+material/0 = SubResource( 3 )
+
+[node name="xyz" type="MeshInstance" parent="."]
+mesh = ExtResource( 1 )
+material/0 = SubResource( 4 )
