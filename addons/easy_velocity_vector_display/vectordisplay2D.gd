@@ -1,8 +1,8 @@
 extends Node2D
 
-export(NodePath) var target : NodePath
-export(String) var target_property : String
-export(float) var vector_scale : float = 1
+@export var target : NodePath
+@export var target_property : String
+@export var vector_scale : float = 1
 
 var target_node = null
 
@@ -18,8 +18,8 @@ func _ready():
 
 func _physics_process(delta):
 	b = target_node.get(target_property)
-	update()
+	queue_redraw()
 
 func _unhandled_key_input(event):
-	if event.scancode == KEY_V and event.pressed:
+	if event.keycode == KEY_V and event.pressed:
 		self.visible = !self.visible
